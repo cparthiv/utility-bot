@@ -102,7 +102,7 @@ module.exports = (client) => {
   });
 
   app.get("/invite", (req, res) => {
-    res.redirect("https://discordapp.com/oauth2/authorize?client_id=523552979664633858&permissions=8&scope=bot");
+    res.redirect("https://discordapp.com/oauth2/authorize?client_id=797876566218506265&permissions=8&scope=bot");
   });
 
   app.get("/callback", passport.authenticate("discord", { failureRedirect: "/forbidden" }), (req, res) => {
