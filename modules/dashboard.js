@@ -20,7 +20,7 @@ module.exports = (client) => {
   const dataDir = path.resolve(`${process.cwd()}${path.sep}dashboard`);
   const templateDir = path.resolve(`${dataDir}${path.sep}templates`);
   app.use("/public", express.static(path.resolve(`${dataDir}${path.sep}public`)));
-
+  const port = process.env.PORT || client.config.dashboard.port;
   passport.serializeUser((user, done) => {
     done(null, user);
   });
@@ -360,5 +360,5 @@ module.exports = (client) => {
     res.redirect("/404");
   });
 
-  client.site = app.listen(client.config.dashboard.port, null, null, () => console.log("Dashboard is up and running."));
+  client.site = app.listen(port, null, null, () => console.log("Dashboard is up and running."));
 };
