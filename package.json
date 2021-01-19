@@ -4,11 +4,7 @@
   "description": "The only moderation bot you need for your discord server, with a ban list, automod and more.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/MrAugu/lutu-bot.git"
+    "start": "node index.js"
   },
   "keywords": [
     "discord.js",
