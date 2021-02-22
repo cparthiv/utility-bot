@@ -10,7 +10,7 @@
     "dblapi.js": "^2.3.0",
     "discord.js": "github:discordjs/discord.js",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-session": "^1.15.6",
     "helmet": "^3.21.1",
     "klaw": "^3.0.0",
