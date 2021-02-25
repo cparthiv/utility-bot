@@ -15,7 +15,7 @@
     "helmet": "^3.21.1",
     "klaw": "^3.0.0",
     "marked": "^0.7.0",
-    "memorystore": "^1.6.0",
+    "memorystore": "^1.6.4",
     "moment": "^2.23.0",
     "moment-duration-format": "^2.2.2",
     "mongoose": "^5.11.12",
