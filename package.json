@@ -5,6 +5,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@discordjs/form-data": "^3.0.1",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "dblapi.js": "^2.4.1",
