@@ -30,10 +30,9 @@ module.exports = class {
     await this.client.user.setStatus("online");
 
     const statusArray = [
-      (client) => client.user.setActivity("Lutu.gq | ?help", { type: "WATCHING" }),
-      (client) => client.user.setActivity(`${this.client.guilds.size} servers | ?help`, { type: "WATCHING" }),
-      (client) => client.user.setActivity(`${this.client.channels.size} channels | ?help`, { type: "WATCHING" }),
-      (client) => client.user.setActivity(`${this.client.users.size} users | ?help`, { type: "WATCHING" })
+      (client) => client.user.setActivity(`${this.client.guilds.size} servers | uhelp`, { type: "WATCHING" }),
+      (client) => client.user.setActivity(`${this.client.channels.size} channels | uhelp`, { type: "WATCHING" }),
+      (client) => client.user.setActivity(`${this.client.users.size} users | uhelp`, { type: "WATCHING" })
     ];
 
     var pick = 0;

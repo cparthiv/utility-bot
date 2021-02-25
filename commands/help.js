@@ -5,7 +5,7 @@ class Help extends Command {
   constructor (client) {
     super(client, {
       name: "help",
-      description: "Learn how to use Lutu's commands.",
+      description: "Learn how to use Utility's commands.",
       category: "General",
       usage: "[category/alias]",
       enabled: true,

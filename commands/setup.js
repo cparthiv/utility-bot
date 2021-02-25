@@ -22,7 +22,7 @@ class Setup extends Command {
     if (args[0].toLowerCase() === "mutedrole") {
       let mutedRole = message.guild.roles.find(r => r.name === "Muted");
       if (mutedRole) {
-        const ms = await reply("The 'Muted' role already exists. Do you want to overwrite its permissions and make it Lutu's 'Muted' role?\n\n- Yes\n- No");
+        const ms = await reply("The 'Muted' role already exists. Do you want to overwrite its permissions and make it Utility's 'Muted' role?\n\n- Yes\n- No");
         await ms.react("✅");
         await ms.react("❎");
         const collected = await ms.awaitReactions((reaction, user) => user.id === message.author.id, {max: 1, time: 60000, errors: ["time"] });

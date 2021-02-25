@@ -6,6 +6,7 @@ const readdir = promisify(require("fs").readdir);
 const klaw = require("klaw");
 const path = require("path");
 const Settings = require("./models/settings.js");
+const settings = require("./models/settings.js");
 
 class Bot extends Client {
   constructor (options) {
@@ -45,11 +46,12 @@ class Bot extends Client {
     this.insertDefaults = async (guildID) => {
       const newSettings = new Settings({
         guildID: guildID,
-        prefix: "?",
+        prefix: "u",
         logsChannel: "none",
         modRole: "none",
         adminRole: "none",
-        disabledCommands: []
+        disabledCommands: [],
+        ignoredUsers: []
       });
 
       await newSettings.save().catch(e => this.logger.log(e, "error"));
@@ -70,7 +72,8 @@ class Bot extends Client {
             logsChannel: obj.modLog,
             modRole: obj.modRole,
             adminRole: obj.adminRole,
-            disabledCommands: obj.disabledCommands
+            disabledCommands: obj.disabledCommands,
+            ignoredUsers: obj.ignoredUsers
           });
           await newSettings.save().catch(e => this.logger.log(e, "error"));
           return;
@@ -79,6 +82,7 @@ class Bot extends Client {
           settingsKit.logsChannel = obj.modLog;
           settingsKit.modRole = obj.modRole;
           settingsKit.adminRole = obj.modRole;
+          settingsKit.ignoredUsers = obj.ignoredUsers;
           settingsKit.disabledCommands = obj.disabledCommands;
           
           await settingsKit.save().catch(e => console.log(e));
