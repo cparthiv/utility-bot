@@ -49,28 +49,7 @@ class Bot extends Client {
         logsChannel: "none",
         modRole: "none",
         adminRole: "none",
-        joinrole: "none",
-        antiSpam: "off",
-        antiLinks: "off",
-        antiInvite: "off",
-        antiBad: "off",
-        antiEveryone: "off",
-        maxMentions: 0,
-        maxLines: 0,
-        ignoredRoles: [],
-        ignoredUsers: [],
-        ignoredChannels: [],
-        checkpoint: "off",
-        checkpoint_logChannel: "none",
-        checkpoint_mode: "N/A",
-        underAttack: "off",
-        nsfwDetection: "off",
-        tags: [],
-        selfroles: [],
-        punishments: [],
-        chatLogs: "off",
-        moderationLogs: "off",
-        serverLogs: "off"
+        disabledCommands: []
       });
 
       await newSettings.save().catch(e => this.logger.log(e, "error"));
@@ -91,27 +70,7 @@ class Bot extends Client {
             logsChannel: obj.modLog,
             modRole: obj.modRole,
             adminRole: obj.adminRole,
-            joinrole: obj.joinrole,
-            antiSpam: obj.antiSpam,
-            antiLinks: obj.antiLink,
-            antiInvite: obj.antiDiscord,
-            antiBad: obj.antiBad,
-            antiEveryone: obj.antiEveryone,
-            maxMentions: parseInt(obj.maxMentions),
-            maxLines: parseInt(obj.maxLines),
-            ignoredRoles: obj.ignoredRoles,
-            ignoredChannels: obj.ignoredChannels,
-            ignoredUsers: [],
-            checkpoint: obj.checkpoint,
-            checkpoint_logChannel: obj.checkpointLog,
-            checkpoint_mode: obj.checkpointMode,
-            underAttack: "off",
-            nsfwDetection: obj.antiNsfw,
-            tags: [],
-            punishments: [],
-            serverLogs: obj.serverLogs,
-            chatLogs: obj.chatLogs,
-            moderationLogs: obj.moderationLogs
+            disabledCommands: obj.disabledCommands
           });
           await newSettings.save().catch(e => this.logger.log(e, "error"));
           return;
@@ -119,24 +78,8 @@ class Bot extends Client {
           settingsKit.prefix = obj.prefix;
           settingsKit.logsChannel = obj.modLog;
           settingsKit.modRole = obj.modRole;
-          settingsKit.adminRole = obj.adminRole;
-          settingsKit.joinrole = obj.joinrole;
-          settingsKit.antiSpam = obj.antiSpam;
-          settingsKit.antiLinks = obj.antiLink;
-          settingsKit.antiInvite = obj.antiDiscord;
-          settingsKit.antiBad = obj.antiBad;
-          settingsKit.antiEveryone = obj.antiEveryone;
-          settingsKit.maxMentions = parseInt(obj.maxMentions);
-          settingsKit.maxLines = parseInt(obj.maxLines);
-          settingsKit.ignoredRoles = obj.ignoredRoles;
-          settingsKit.ignoredChannels = obj.ignoredChannels;
-          settingsKit.checkpoint = obj.checkpoint;
-          settingsKit.checkpoint_logChannel = obj.checkpointLog;
-          settingsKit.checkpoint_mode = obj.checkpointMode;
-          settingsKit.nsfwDetection = obj.antiNsfw;
-          settingsKit.serverLogs = obj.serverLogs;
-          settingsKit.chatLogs = obj.chatLogs;
-          settingsKit.moderationLogs = obj.moderationLogs;
+          settingsKit.adminRole = obj.modRole;
+          settingsKit.disabledCommands = obj.disabledCommands;
           
           await settingsKit.save().catch(e => console.log(e));
           return;
