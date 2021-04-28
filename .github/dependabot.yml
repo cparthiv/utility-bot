@@ -1,0 +1,48 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: mongoose
+    versions:
+    - 5.11.17
+    - 5.11.18
+    - 5.11.19
+    - 5.12.0
+    - 5.12.1
+    - 5.12.2
+    - 5.12.3
+    - 5.12.4
+    - 5.12.5
+  - dependency-name: marked
+    versions:
+    - 2.0.1
+  - dependency-name: memorystore
+    versions:
+    - 1.6.4
+    - 1.6.5
+  - dependency-name: chalk
+    versions:
+    - 4.1.0
+  - dependency-name: passport
+    versions:
+    - 0.4.1
+  - dependency-name: ms
+    versions:
+    - 2.1.3
+  - dependency-name: helmet
+    versions:
+    - 4.4.1
+  - dependency-name: body-parser
+    versions:
+    - 1.19.0
+  - dependency-name: express
+    versions:
+    - 4.17.1
+  - dependency-name: passport-discord
+    versions:
+    - 0.1.4
