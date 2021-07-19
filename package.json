@@ -19,7 +19,7 @@
     "memorystore": "^1.6.0",
     "moment": "^2.23.0",
     "moment-duration-format": "^2.2.2",
-    "mongoose": "^5.11.12",
+    "mongoose": "^5.13.3",
     "ms": "^2.1.1",
     "passport": "^0.4.0",
     "passport-discord": "^0.1.3",
